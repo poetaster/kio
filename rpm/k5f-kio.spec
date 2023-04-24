@@ -10,23 +10,39 @@ License:        LGPLv2+
 URL:            https://invent.kde.org/frameworks/%{framework}
 Source0: 		%{name}-%{version}.tar.bz2
 
+
 %{?opt_kf5_default_filter}
 
-## upstream fixes
+# filter plugin provides
+%global __provides_exclude_from ^(%{_opt_kf5_qtplugindir}/.*\\.so)$
 
+Patch101: 0001-Spec-remove-X11-dep-for-SFOS.-reduce-to-core-add-pat.patch
+Patch102: kio-no-help-protocol.patch
+
+# core
 BuildRequires:  opt-extra-cmake-modules >= %{kf5_version}
 BuildRequires:  opt-kf5-rpm-macros >= %{kf5_version}
 BuildRequires:  opt-kf5-kconfig-devel 
-BuildRequires:  opt-kf5-kwidgetsaddons-devel
+BuildRequires:  opt-kf5-karchive-devel 
+BuildRequires:  opt-kf5-kcrash-devel 
+BuildRequires:  opt-kf5-kdbusaddons-devel >= %{majmin}
+BuildRequires:  opt-kf5-kguiaddons-devel >= %{majmin}
+BuildRequires:  opt-kf5-ki18n-devel >= %{majmin}
+BuildRequires:  opt-kf5-kservice-devel >= %{majmin}
+BuildRequires:  opt-kf5-solid-devel >= %{majmin}
+# extras
+
 BuildRequires:  opt-qt5-qtbase-devel
 BuildRequires:  opt-qt5-qttools-devel
+
+BuildRequires:  pkgconfig(blkid)
+BuildRequires:  pkgconfig(mount)
+BuildRequires:  zlib-devel
 
 %{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
 Requires: opt-qt5-qtbase-gui
 
 %description
-KCompletion provides widgets with advanced completion support as well as a
-lower-level completion class which can be used with your own widgets.
 
 %package        devel
 Summary:        Development files for %{name}
