@@ -37,8 +37,8 @@ BuildRequires:  opt-qt5-qttools-devel
 BuildRequires:  pkgconfig(blkid)
 BuildRequires:  pkgconfig(mount)
 BuildRequires:  zlib-devel
-BuildRequires:  cmake(Qt5UiPlugin)
-BuildRequires:  cmake(Qt5Qml)
+#BuildRequires:  cmake(Qt5UiPlugin)
+#BuildRequires:  cmake(Qt5Qml)
 
 %{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
 Requires: opt-qt5-qtbase-gui
