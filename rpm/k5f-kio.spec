@@ -16,8 +16,7 @@ Source0: 		%{name}-%{version}.tar.bz2
 # filter plugin provides
 %global __provides_exclude_from ^(%{_opt_kf5_qtplugindir}/.*\\.so)$
 
-Patch101: 0001-Spec-remove-X11-dep-for-SFOS.-reduce-to-core-add-pat.patch
-Patch102: kio-no-help-protocol.patch
+Patch101: kio-no-help-protocol.patch
 
 # core
 BuildRequires:  opt-extra-cmake-modules >= %{kf5_version}
@@ -62,7 +61,9 @@ touch .git
 mkdir -p build
 pushd build
 
-%_opt_cmake_kf5 ../
+%_opt_cmake_kf5 ../ \
+  -DKIOCORE_ONLY=ON
+
 %make_build
 
 popd
