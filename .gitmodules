@@ -1,3 +1,4 @@
 [submodule "upstream"]
-	path = upstream
-	url = https://invent.kde.org/frameworks/kio
+       path = upstream
+       url = https://invent.kde.org/frameworks/kio
+
