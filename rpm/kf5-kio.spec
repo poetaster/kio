@@ -46,6 +46,9 @@ BuildRequires:  opt-kf5-kwidgetsaddons-devel >= %{kf5_version}
 BuildRequires:  opt-qt5-qtbase-devel
 BuildRequires:  opt-qt5-qttools-devel
 
+BuildRequires:  libacl-devel
+BuildRequires:  libxml2-devel
+BuildRequires:  libxslt-devel
 BuildRequires:  pkgconfig(blkid)
 BuildRequires:  pkgconfig(mount)
 BuildRequires:  zlib-devel
