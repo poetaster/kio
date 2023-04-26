@@ -25,6 +25,7 @@ BuildRequires:  opt-kf5-rpm-macros >= %{kf5_version}
 BuildRequires:  opt-kf5-kconfig-devel 
 BuildRequires:  opt-kf5-karchive-devel 
 BuildRequires:  opt-kf5-kcrash-devel 
+BuildRequires:  opt-kf5-kauth-devel 
 BuildRequires:  opt-kf5-kdbusaddons-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-kguiaddons-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-ki18n-devel >= %{kf5_version}
