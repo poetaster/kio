@@ -82,6 +82,11 @@ Requires:       %{name}-core = %{version}-%{release}
 %description    core-libs
 %{summary}.
 
+%package        ntlm                                               
+Summary:        NTLM support for KIO Framework                     
+%description    ntlm                                               
+KIONTLM provides support for NTLM authentication mechanism in KIO  
+
 %prep
 %autosetup -n %{name}-%{version}/upstream -p1
 
@@ -113,14 +118,29 @@ popd
 
 %files core-libs                  
 %{_opt_kf5_libdir}/libKF5KIOCore.so.* 
+%{_opt_kf5_libdir}/libKF5KIONTLM.so.* 
                                   
 %files                                                                    
 %license LICENSES/*.txt                                                   
 %doc README.md                                                            
                                                                           
 %files core                                                               
+%{_opt_kf5_datadir}/locale/
 %{_opt_kf5_sysconfdir}/xdg/accept-languages.codes                             
 %{_opt_kf5_datadir}/qlogging-categories5/*categories                          
+%{_opt_kf5_libexecdir}/kio_http_cache_cleaner           
+%{_opt_kf5_libexecdir}/kpac_dhcp_helper                 
+%{_opt_kf5_libexecdir}/kioexec                          
+%{_opt_kf5_libexecdir}/kioslave5                        
+%{_opt_kf5_libexecdir}/kiod5                            
+%{_opt_kf5_plugindir}/kio/                              
+%{_opt_kf5_plugindir}/kded/                             
+%{_opt_kf5_qtplugindir}/kcm_*.so                        
+%{_opt_kf5_plugindir}/kiod/                             
+%{_opt_kf5_datadir}/kservices5/*.desktop                
+%{_opt_kf5_datadir}/knotifications5/proxyscout.*        
+%{_opt_kf5_datadir}/kf5/kcookiejar/domain_info          
+%{_opt_kf5_datadir}/applications/*.desktop              
 %{_opt_kf5_bindir}/ktrash5                                                    
 %{_opt_kf5_datadir}/kservices5/*.desktop                                      
 %{_opt_kf5_datadir}/applications/*.desktop                                    
