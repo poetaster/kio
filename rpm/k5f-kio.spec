@@ -121,24 +121,10 @@ popd
 %files core                                                               
 %{_opt_kf5_sysconfdir}/xdg/accept-languages.codes                             
 %{_opt_kf5_datadir}/qlogging-categories5/*categories                          
-%{_opt_kf5_libexecdir}/kio_http_cache_cleaner                                 
-%{_opt_kf5_libexecdir}/kpac_dhcp_helper                                       
-%{_opt_kf5_libexecdir}/kioexec                                                
-%{_opt_kf5_libexecdir}/kioslave5                                              
-%{_opt_kf5_libexecdir}/kiod5                                                  
-%{_opt_kf5_bindir}/ktelnetservice5                                            
-%{_opt_kf5_bindir}/kcookiejar5                                                
 %{_opt_kf5_bindir}/ktrash5                                                    
-%{_opt_kf5_plugindir}/kio/                                                    
-%{_opt_kf5_plugindir}/kded/                                                   
-%{_opt_kf5_qtplugindir}/kcm_*.so                                              
-%{_opt_kf5_plugindir}/kiod/                                                   
 %{_opt_kf5_datadir}/kservices5/*.desktop                                      
-%{_opt_kf5_datadir}/knotifications5/proxyscout.*                              
-%{_opt_kf5_datadir}/kf5/kcookiejar/domain_info                                
 %{_opt_kf5_datadir}/applications/*.desktop                                    
 %{_opt_kf5_datadir}/kconf_update/*                                            
-%{_datadir}/dbus-1/services/org.kde.*.service                             
                                                                           
 
 %files devel                                                                         
