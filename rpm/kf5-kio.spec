@@ -14,22 +14,34 @@ Source0:		%{name}-%{version}.tar.bz2
 %global __provides_exclude_from ^(%{_opt_kf5_qtplugindir}/.*\\.so)$
 
 # SFOS patch
-#Patch1:    0001-Patch-remove-optional-KF5DocTools.patch
 Patch2:    0001-telnet-remove.patch
 
 # core
 BuildRequires:  opt-extra-cmake-modules >= %{kf5_version}
 BuildRequires:  opt-kf5-rpm-macros >= %{kf5_version}
-BuildRequires:  opt-kf5-kconfig-devel
-BuildRequires:  opt-kf5-karchive-devel
-BuildRequires:  opt-kf5-kcrash-devel
-BuildRequires:  opt-kf5-kauth-devel
+BuildRequires:  opt-kf5-karchive-devel >= %{kf5_version}
+BuildRequires:  opt-kf5-kauth-devel >= %{kf5_version}
+BuildRequires:  opt-kf5-kconfig-devel >= %{kf5_version}
+BuildRequires:  opt-kf5-kcrash-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-kdbusaddons-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-kguiaddons-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-ki18n-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-kservice-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-solid-devel >= %{kf5_version}
 # extras
+#BuildRequires:  opt-kf5-kbookmarks-devel >= %{kf5_version}
+BuildRequires:  opt-kf5-kcompletion >= %{kf5_version}
+BuildRequires:  opt-kf5-kconfigwidgets-devel >= %{kf5_version}
+BuildRequires:  opt-kf5-kiconthemes-devel >= %{kf5_version}
+BuildRequires:  opt-kf5-kitemviews-devel >= %{kf5_version}
+#BuildRequires:  opt-kf5-kjobwidgets-devel >= %{kf5_version}
+BuildRequires:  opt-kf5-kwindowsystem-devel >= %{kf5_version}
+# others
+BuildRequires:  opt-kf5-knotifications-devel >= %{kf5_version}
+#BuildRequires:  opt-kf5-ktextwidgets-devel >= %{kf5_version}
+#BuildRequires:  opt-kf5-kwallet-devel >= %{kf5_version}
+BuildRequires:  opt-kf5-kwidgetsaddons-devel >= %{kf5_version}
+#BuildRequires:  opt-kf5-kxmlgui-devel >= %{kf5_version}
 
 BuildRequires:  opt-qt5-qtbase-devel
 BuildRequires:  opt-qt5-qttools-devel
@@ -51,16 +63,18 @@ KDE Frameworks 5 Tier 3 solution for filesystem abstraction
 
 %package        devel
 Summary:        Development files for %{name}
+%{?opt_kf5_default_filter}
+%{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       opt-kf5-kbookmarks-devel >= %{kf5_version}
+#Requires:       opt-kf5-kbookmarks-devel >= %{kf5_version}
 Requires:       opt-kf5-kcompletion-devel >= %{kf5_version}
 Requires:       opt-kf5-kconfig-devel >= %{kf5_version}
 Requires:       opt-kf5-kcoreaddons-devel >= %{kf5_version}
 Requires:       opt-kf5-kitemviews-devel >= %{kf5_version}
-Requires:       opt-kf5-kjobwidgets-devel >= %{kf5_version}
+#Requires:       opt-kf5-kjobwidgets-devel >= %{kf5_version}
 Requires:       opt-kf5-kservice-devel >= %{kf5_version}
 Requires:       opt-kf5-solid-devel >= %{kf5_version}
-Requires:       opt-kf5-kxmlgui-devel >= %{kf5_version}
+#Requires:       opt-kf5-kxmlgui-devel >= %{kf5_version}
 Requires:       opt-kf5-kwindowsystem-devel >= %{kf5_version}
 %description    devel
 The %{name}-devel package contains libraries and header files for
@@ -71,22 +85,36 @@ developing applications that use %{name}.
 Summary:        Core components of the KIO Framework
 ## org.kde.klauncher5 service referenced from : src/core/slave.cpp
 %{?kf5_kinit_requires}
-Requires:       %{name}-core-libs%{?_isa} = %{version}-%{release}
+%{?opt_kf5_default_filter}
+%{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
+Requires: %{name}-core-libs%{?_isa} = %{version}-%{release}
+Requires: opt-kf5-solid >= %{kf5_version}
+Requires: opt-kf5-karchive >= %{kf5_version}
+Requires: opt-qt5-qtbase-gui
 
 %description    core
 KIOCore library provides core non-GUI components for working with KIO.
 
 %package        core-libs
 Summary:        Runtime libraries for KIO Core
-#{?opt_kf5_default_filter}
+%{?opt_kf5_default_filter}
 %{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
-Requires:       %{name}-core = %{version}-%{release}
+Requires: %{name}-core = %{version}-%{release}
+Requires: opt-kf5-kauth >= %{kf5_version}
+Requires: opt-kf5-kconfig-core >= %{kf5_version}
+Requires: opt-kf5-kcoreaddons >= %{kf5_version}
+Requires: opt-kf5-kcrash >= %{kf5_version}
+Requires: opt-kf5-ki18n >= %{kf5_version}
+Requires: opt-kf5-kservice >= %{kf5_version}
 
 %description    core-libs
 %{summary}.
 
 %package        ntlm
 Summary:        NTLM support for KIO Framework
+%{?opt_kf5_default_filter}
+%{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
+
 %description    ntlm
 KIONTLM provides support for NTLM authentication mechanism in KIO
 
@@ -147,8 +175,6 @@ popd
 #%{_opt_kf5_datadir}/kf5/kcookiejar/domain_info
 %{_opt_kf5_datadir}/applications/*.desktop
 %{_opt_kf5_bindir}/ktrash5
-%{_opt_kf5_datadir}/kservices5/*.desktop
-%{_opt_kf5_datadir}/applications/*.desktop
 %{_opt_kf5_datadir}/kconf_update/*
 %{_opt_qt5_datadir}/dbus-1/services/org.kde.*.service
 
@@ -165,4 +191,4 @@ popd
 %{_opt_kf5_libdir}/cmake/KF5KIO/
 
 %files ntlm
-%{_kf5_libdir}/libKF5KIONTLM.so.*
+%{_opt_kf5_libdir}/libKF5KIONTLM.so.*
