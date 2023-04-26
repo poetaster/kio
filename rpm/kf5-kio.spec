@@ -4,7 +4,7 @@
 Name:			opt-kf5-kio
 Version:		5.105.0
 Release:		1%{?dist}
-Summary:        KDE Frameworks 5 Tier 2 addon with auto completion widgets and classes
+Summary:        KDE Frameworks 5 Tier 3 solution for filesystem abstraction
 
 License:        LGPLv2+
 URL:            https://invent.kde.org/frameworks/%{framework}
