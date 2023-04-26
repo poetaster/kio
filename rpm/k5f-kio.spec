@@ -92,9 +92,9 @@ mkdir -p build
 pushd build
 
 %_opt_cmake_kf5 ../ \
-  -DKIOCORE_ONLY=ON
-  -DBUILD_DESIGNERPLUGIN=OFF
-  -DWITH_X11=OFF
+  -DKIOCORE_ONLY=ON \
+  -DBUILD_DESIGNERPLUGIN=OFF \
+  -DWITH_X11=OFF \
 
 %make_build
 
