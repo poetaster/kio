@@ -16,7 +16,8 @@ Source0: 		%{name}-%{version}.tar.bz2
 # filter plugin provides
 %global __provides_exclude_from ^(%{_opt_kf5_qtplugindir}/.*\\.so)$
 
-#Patch101: kio-no-help-protocol.patch
+# SFOS patch
+Patch1:    0001-Patch-remove-optional-KF5DocTools.patch
 
 # core
 BuildRequires:  opt-extra-cmake-modules >= %{kf5_version}
@@ -91,6 +92,8 @@ pushd build
 
 %_opt_cmake_kf5 ../ \
   -DKIOCORE_ONLY=ON
+  -DBUILD_DESIGNERPLUGIN=OFF
+  -DWITH_X11=OFF
 
 %make_build
 
