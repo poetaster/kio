@@ -18,6 +18,7 @@ Source0: 		%{name}-%{version}.tar.bz2
 
 # SFOS patch
 Patch1:    0001-Patch-remove-optional-KF5DocTools.patch
+Patch2:    0001-telnet-remove.patch
 
 # core
 BuildRequires:  opt-extra-cmake-modules >= %{kf5_version}

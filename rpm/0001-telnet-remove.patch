@@ -1,0 +1,19 @@
+From 58528f7a4cf6e66fb7d2bad36333fbaaf3fe2993 Mon Sep 17 00:00:00 2001
+From: Mark Washeim <blueprint@poetaster.de>
+Date: Wed, 26 Apr 2023 10:43:45 +0200
+Subject: [PATCH] telnet: remove
+
+---
+ src/schemehandlers/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/schemehandlers/CMakeLists.txt b/src/schemehandlers/CMakeLists.txt
+index 0eaebe0fa..758d0b46b 100644
+--- a/src/schemehandlers/CMakeLists.txt
++++ b/src/schemehandlers/CMakeLists.txt
+@@ -1 +1 @@
+-add_subdirectory( telnet )
++#add_subdirectory( telnet )
+-- 
+2.34.1
+
