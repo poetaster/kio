@@ -142,7 +142,7 @@ popd
                                                                           
 
 %files devel                                                                         
-%{_datadir}/dbus-1/interfaces/*.xml                                                  
+#%{_datadir}/dbus-1/interfaces/*.xml                                                  
 %{_opt_kf5_archdatadir}/mkspecs/modules/qt_*.pri                                         
 %{_opt_kf5_bindir}/protocoltojson                                                        
 %{_opt_kf5_datadir}/kdevappwizard/templates/kioworker.tar.bz2                            
