@@ -39,7 +39,7 @@ BuildRequires:  opt-kf5-kwindowsystem-devel >= %{kf5_version}
 # others
 BuildRequires:  opt-kf5-knotifications-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-ktextwidgets-devel >= %{kf5_version}
-#BuildRequires:  opt-kf5-kwallet-devel >= %{kf5_version}
+BuildRequires:  opt-kf5-kwallet-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-kwidgetsaddons-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-kxmlgui-devel >= %{kf5_version}
 
@@ -77,6 +77,7 @@ Requires:       opt-kf5-kjobwidgets-devel >= %{kf5_version}
 Requires:       opt-kf5-kservice-devel >= %{kf5_version}
 Requires:       opt-kf5-solid-devel >= %{kf5_version}
 Requires:       opt-kf5-kxmlgui-devel >= %{kf5_version}
+Requires:       opt-kf5-kwallet-devel >= %{kf5_version}
 Requires:       opt-kf5-kwindowsystem-devel >= %{kf5_version}
 %description    devel
 The %{name}-devel package contains libraries and header files for
@@ -95,6 +96,7 @@ Requires: opt-kf5-kconfigwidgets >= %{kf5_version}
 Requires: opt-kf5-kdbusaddons >= %{kf5_version}
 Requires: opt-kf5-knotifications >= %{kf5_version}
 Requires: opt-kf5-solid >= %{kf5_version}
+Requires: opt-kf5-kwallet-libs >= %{kf5_version}
 Requires: opt-kf5-kwidgetsaddons >= %{kf5_version}
 Requires: opt-kf5-kwindowsystem >= %{kf5_version}
 Requires: opt-qt5-qtbase-gui
