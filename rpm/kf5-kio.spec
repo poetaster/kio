@@ -125,7 +125,7 @@ Summary:        Widgets for KIO Framework
 %{?kf5_kinit_requires}
 %{?opt_kf5_default_filter}
 Requires:       %{name}-core%{?_isa} = %{version}-%{release}
-Requires:       %{name}-widgets-libs%{?_isa}= %{version}-%{release}
+Requires:       %{name}-widgets-libs = %{version}-%{release}
 Requires: opt-kf5-kitemviews
 %description    widgets
 KIOWidgets contains classes that provide generic job control, progress
