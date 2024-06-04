@@ -177,22 +177,15 @@ KIONTLM provides support for NTLM authentication mechanism in KIO
 export QTDIR=%{_opt_qt5_prefix}
 touch .git
 
-mkdir -p build
-pushd build
-
-%_opt_cmake_kf5 ../ \
+%_opt_cmake_kf5 \
   -DKIOCORE_ONLY=OFF \
   -DBUILD_DESIGNERPLUGIN=OFF \
   -DWITH_X11=OFF \
 
-%make_build
-
-popd
+%cmake_build
 
 %install
-pushd build
-make DESTDIR=%{buildroot} install
-popd
+%cmake_install
 
 %find_lang_kf5 kio5_qt
 
